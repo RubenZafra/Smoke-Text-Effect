@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Smoke Text Effect | Html-Css-JS </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section>
+      <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </section>
+<!-- Separate each letter -->
+    <script type="text/javascript">
+      const text = document.querySelector('.text');
+      text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+      // Add active class on hovered <span>
+      const letters = document.querySelectorAll('span');
+      for (let i = 0; i < letters.length; i++){
+        letters[i].addEventListener("mouseover", function(){
+          letters[i].classList.add('active')
+        })
+      }
+    </script>
+  </body>
+</html>
